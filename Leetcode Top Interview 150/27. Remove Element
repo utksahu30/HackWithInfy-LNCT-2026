@@ -1,0 +1,9 @@
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        k = 0
+        for x in nums:
+            if x != val:
+                nums[k] = x
+                k = k+1
+        return k
+#every value in nums not equal to val gets copied to the indexes in the start and k is the new required length         
