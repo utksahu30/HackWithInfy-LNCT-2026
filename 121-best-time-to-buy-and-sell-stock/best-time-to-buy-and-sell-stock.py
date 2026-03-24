@@ -3,6 +3,8 @@ class Solution:
         max_profit = 0
         min_price = float('inf')
         for current_price in prices:
-            max_profit = max(max_profit, current_price - min_price)
-            min_price = min(min_price, current_price)
+            if current_price < min_price:
+                min_price = current_price
+            elif current_price - min_price > max_profit:
+                max_profit = current_price - min_price
         return max_profit
