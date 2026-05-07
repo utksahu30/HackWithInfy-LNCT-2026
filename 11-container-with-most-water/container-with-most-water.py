@@ -12,11 +12,16 @@ class Solution:
         return maxw'''
         maxw = 0
         l,r = 0, len(height)-1
+        hmax = max(height)
+
         while l < r:
-            h = min(height[l],height[r])
+            h = height[l] if height[l] < height[r] else height[r]            
             w = r - l
             maxwn = h*w
-            maxw = max(maxw,maxwn)
+            if maxwn > maxw:
+                maxw = maxwn
+            if hmax * w <= maxwn:
+                break
         
             if height[l]<height[r]:
                 l = l+1
