@@ -10,3 +10,5 @@ class Solution:
         for j in range(len(nums)):
             if nums[j] != j+1:
                 return[nums[j],j+1]           
+
+#cyclic sorting
